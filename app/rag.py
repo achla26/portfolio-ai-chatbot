@@ -1,13 +1,13 @@
 import os
 import glob
+import cohere
 import numpy as np
-from sentence_transformers import SentenceTransformer
-from app.config import EMBEDDING_MODEL, DATA_DIR, TOP_K
+from app.config import DATA_DIR, TOP_K, COHERE_API_KEY
 
 # Global storage
 chunks = []
 embeddings = None
-model = None
+cohere_client = None
 
 
 def load_documents():
@@ -34,16 +34,33 @@ def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50):
     return result
 
 
+def embed_texts(texts: list, input_type: str = "search_document") -> np.ndarray:
+    """Embed texts using Cohere API"""
+    global cohere_client
+    
+    response = cohere_client.embed(
+        texts=texts,
+        model="embed-english-light-v3.0",
+        input_type=input_type,
+    )
+    
+    return np.array(response.embeddings)
+
 
 def initialize_rag():
-    """Load model, chunk documents, create embeddings"""
-    global chunks, embeddings, model
+    """Load documents and create embeddings via Cohere"""
+    global chunks, embeddings, cohere_client
     
-    print("🔄 Loading embedding model...")
-    model = SentenceTransformer(EMBEDDING_MODEL)
+    print("🔄 Initializing Cohere client...")
+    if not COHERE_API_KEY:
+        raise ValueError("❌ COHERE_API_KEY not set in environment!")
+    
+    cohere_client = cohere.Client(COHERE_API_KEY)
+    print("✅ Cohere client ready")
     
     print("🔄 Loading documents...")
     docs = load_documents()
+    print(f"✅ Loaded {len(docs)} documents")
     
     print("🔄 Chunking documents...")
     for doc in docs:
@@ -56,11 +73,12 @@ def initialize_rag():
     
     print(f"✅ Created {len(chunks)} chunks")
     
-    print("🔄 Creating embeddings...")
+    print("🔄 Creating embeddings via Cohere API...")
     texts = [c["text"] for c in chunks]
-    embeddings = model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
+    embeddings = embed_texts(texts, input_type="search_document")
     
     print(f"✅ RAG initialized with {len(chunks)} chunks")
+    print(f"✅ Embeddings shape: {embeddings.shape}")
 
 
 def retrieve(query: str, top_k: int = None):
@@ -68,8 +86,8 @@ def retrieve(query: str, top_k: int = None):
     if top_k is None:
         top_k = TOP_K
     
-    # Embed query
-    query_emb = model.encode([query], convert_to_numpy=True)[0]
+    # Embed query using "search_query" type
+    query_emb = embed_texts([query], input_type="search_query")[0]
     
     # Cosine similarity
     similarities = np.dot(embeddings, query_emb) / (
