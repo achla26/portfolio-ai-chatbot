@@ -84,7 +84,9 @@ async def chat(request: ChatRequest, http_request: Request):
 # Streaming endpoint
 @app.post("/chat/stream")
 async def chat_stream(request: ChatRequest, http_request: Request):
-    """Stream response using Server-Sent Events (SSE)"""
+    """Stream response using Server-Sent Events (SSE) - Async version"""
+    import asyncio
+    
     # Rate limit check
     rate_limiter.check_rate_limit(http_request)
     
@@ -100,31 +102,34 @@ async def chat_stream(request: ChatRequest, http_request: Request):
             for r in retrieved
         ]
         
-        def event_generator():
-            # First event: Send retrieved sources
+        async def event_generator():
+            # 1. Send sources first
             yield f"data: {json.dumps({'type': 'sources', 'data': retrieved_formatted})}\n\n"
+            await asyncio.sleep(0.01)  # ✅ Flush buffer
             
-            # Then stream the LLM response
-            for token in llm.generate_response_stream(request.message, context):
-                yield f"data: {json.dumps({'type': 'token', 'data': token})}\n\n"
+            # 2. Stream tokens (async!)
+            async for token in llm.generate_response_stream_async(request.message, context):
+                data = json.dumps({'type': 'token', 'data': token})
+                yield f"data: {data}\n\n"
+                await asyncio.sleep(0)  # ✅ Yield control to flush
             
-            # Final event: Done
+            # 3. Send done signal
             yield f"data: {json.dumps({'type': 'done'})}\n\n"
         
         return StreamingResponse(
             event_generator(),
             media_type="text/event-stream",
             headers={
-                "Cache-Control": "no-cache",
+                "Cache-Control": "no-cache, no-transform",
                 "Connection": "keep-alive",
-                "X-Accel-Buffering": "no",  # Disable nginx buffering
+                "X-Accel-Buffering": "no",
+                "Content-Type": "text/event-stream",
             }
         )
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
 
 # Admin endpoint (protect this in production!)
 @app.get("/admin/stats")
