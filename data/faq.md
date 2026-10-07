@@ -14,7 +14,7 @@ I'm originally from India but currently based in **Christchurch, New Zealand**. 
 
 ## Why should I hire you?
 
-I bring a rare combination: **5+ years of production full-stack experience** combined with **hands-on AI engineering skills**. I've shipped real apps for real clients (not just tutorials or demos), and I've recently built production-grade RAG systems with features like hallucination detection and confidence scoring.
+I bring a rare combination: **5+ years of production full-stack experience** plus **data pipelines** (dbt + Airflow, tested, green CI) and **hands-on AI engineering skills**. I've shipped real apps for real clients (not just tutorials or demos), and I've recently built production-grade RAG systems with features like hallucination detection and confidence scoring.
 
 Plus, I'm a **New Zealand Permanent Resident** — no visa sponsorship needed, no complications. I'm available immediately, full-time, and willing to relocate anywhere in NZ.
 
@@ -63,19 +63,19 @@ I'm **available immediately, full-time**. Currently freelancing, so I can transi
 
 ## What's your expected salary?
 
-I'm open to discussing based on the role, responsibilities, and total compensation package. Happy to align with the market rate for a full-stack developer with 5+ years of experience and AI integration skills in the NZ market.
+I'm open to discussing based on the role, responsibilities, and total compensation package. Happy to align with the market rate for a data/full-stack developer with 5+ years of experience plus AI skills in the NZ market.
 
 ---
 
 ## What kind of role are you looking for?
 
-I'm looking for a **Full Stack Developer** or **AI Engineer** role where I can:
+I'm looking for a **Data Engineer**, **Analytics Engineer**, **AI Engineer** or **Full Stack Developer** role where I can:
 
 - Work on real production systems with real users
-- Combine full-stack development with AI/LLM integration
+- Combine backend, data and AI experience on production systems
 - Learn from a strong team and contribute meaningfully
 
-I'm particularly interested in **companies building AI-powered products** — but I'm equally excited about strong full-stack roles at product-focused companies.
+I'm particularly interested in **companies building data/AI-powered products** — but I'm equally excited about strong full-stack roles at product-focused companies.
 
 ---
 
@@ -83,7 +83,7 @@ I'm particularly interested in **companies building AI-powered products** — bu
 
 **LangChain and RAG systems.** I love how they enable building AI applications that are grounded in real data (not just LLM hallucinations). I'm also excited about **agentic AI** — LangGraph, multi-agent systems, and workflows.
 
-On the traditional stack side, I've been enjoying **Next.js 14+ with App Router** and **type-safe monorepos** (Turborepo, tRPC-style patterns).
+On the data side: **dbt and Airflow** in production-style pipelines — now learning **Azure Fabric (DP-700 track)** and **Power BI**. On the traditional stack side, I've been enjoying **Next.js 14+ with App Router** and **type-safe monorepos** (Turborepo, tRPC-style patterns).
 
 ---
 
@@ -91,7 +91,7 @@ On the traditional stack side, I've been enjoying **Next.js 14+ with App Router*
 
 Probably the **AI Handbook Q&A System** — my production RAG project. It taught me so much: how retrieval quality affects final output, why hallucination detection matters, how to think about latency vs. accuracy tradeoffs. Plus, it actually works at 100% accuracy on test queries — which felt great.
 
-Runner-up is **Pulse**, my AI-native productivity app. It's my daily driver — I built exactly what I needed.
+Runner-up is **Pulse**, my AI-native productivity app. And on the data side, **Shaky Isles** — my hourly quake pipeline — taught me idempotency, testing and CI for data.
 
 ---
 
@@ -119,9 +119,9 @@ It's also a live demo of my full-stack + AI capabilities in one app. The fronten
 
 ## What are your long-term career goals?
 
-Short-term: Land a great full-time role in NZ where I can grow into an AI Engineering specialization while contributing my full-stack skills.
+Short-term: Land a great full-time data/AI role in NZ where I can grow at the data + AI intersection while contributing my full-stack skills.
 
-Long-term: Become a **senior AI engineer** at a product company — someone who can architect real AI systems (not just wrap ChatGPT APIs). I want to be someone teams call when they say "we need to actually make this AI feature work in production."
+Long-term: Become a **senior data/AI engineer** at a product company — someone who architects reliable pipelines AND real AI systems (not just wrap ChatGPT APIs). I want to be someone teams call when they say "we need to actually make this AI feature work in production."
 
 ---
 

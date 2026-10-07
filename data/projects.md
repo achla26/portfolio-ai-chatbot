@@ -4,7 +4,48 @@ Here are the projects I'm most proud of — a mix of production apps, AI systems
 
 ---
 
-## 1. Fixaddo — Home Services Marketplace (In Progress)
+## 1. Shaky Isles — NZ Quake Data Pipeline
+
+**One-liner:** An hourly earthquake pipeline: GeoNet API to bronze JSON to dbt marts, fully tested and scheduled.
+
+**Tech Stack:** `Python`, `DuckDB`, `dbt`, `Airflow`, `GitHub Actions`
+
+**What I built:**
+- Hourly GeoNet API ingestion into timestamped bronze JSON (raw, as-is)
+- Idempotent DuckDB loads deduped on quake ID (run twice, same count)
+- dbt staging (JSON parsing + casts) plus daily-counts mart, **5/5 tests passing**
+- Scheduled green runs on GitHub Actions (55s) plus an Airflow DAG version
+- Written debugging record (LEARNED.md) for every bug and fix
+
+**Why it's cool:**
+A real end-to-end data pipeline with testing, CI and orchestration — not a notebook demo. Shows how I think about idempotency, data quality and automation.
+
+**Links:**
+- 🔗 [GitHub Source](https://github.com/achla26/shaky-isles)
+
+---
+
+## 2. SQL Data Warehouse — Bronze to Gold
+
+**One-liner:** A PostgreSQL warehouse with Bronze→Silver→Gold layers, star schema and ETL procedures.
+
+**Tech Stack:** `PostgreSQL`, `SQL`, `ETL`, `Star Schema`, `Docker`
+
+**What I built:**
+- Bronze/Silver/Gold layered architecture with documented load order
+- Star schema with dimension and fact tables
+- ETL stored procedures with incremental loads
+- Data-quality checks at Silver and Gold layers
+
+**Why it's cool:**
+My first warehouse end-to-end — and the foundation I'm now rebuilding with dbt and Airflow (see Shaky Isles above).
+
+**Links:**
+- 🔗 [GitHub Source](https://github.com/achla26/sql-warehouse)
+
+---
+
+## 3. Fixaddo — Home Services Marketplace (In Progress)
 
 **One-liner:** A React Native mobile app connecting homeowners with local service providers.
 
@@ -24,7 +65,7 @@ This is a real client project for an active freelance engagement. It required me
 
 ---
 
-## 2. AI Handbook Q&A System (RAG) — Production RAG
+## 4. AI Handbook Q&A System (RAG) — Production RAG
 
 **One-liner:** A production-grade RAG system that answers questions from a large handbook with 100% accuracy on test queries.
 
@@ -45,7 +86,7 @@ This isn't a toy RAG demo. It has production-grade features like hallucination d
 
 ---
 
-## 3. Pulse — AI-Native Mobile Command Center (In Progress)
+## 5. Pulse — AI-Native Mobile Command Center (In Progress)
 
 **One-liner:** A mobile-first productivity app that replaces 5+ apps by unifying notes, tasks, reminders, links, and ideas into one AI-powered inbox.
 
@@ -66,7 +107,7 @@ This is my personal daily-driver app — solving my own productivity problem wit
 
 ---
 
-## 4. AI Resume Matcher — Live Web Tool
+## 6. AI Resume Matcher — Live Web Tool
 
 **One-liner:** A deployed tool where users paste their resume and a job description to get a match score and actionable improvement suggestions.
 
@@ -83,11 +124,10 @@ Built end-to-end in a weekend. Solves a real problem I faced during my own job s
 
 **Links:**
 - 🔗 [GitHub Source](https://github.com/achla26/ai-resume-matcher)
-- 🌐 [Try it live](https://your-live-link.com)
 
 ---
 
-## 5. Catking.in — EdTech Platform (Production)
+## 7. Catking.in — EdTech Platform (Production)
 
 **One-liner:** A course registration and management platform for a real EdTech client.
 
@@ -104,7 +144,7 @@ Production app serving real students. Taught me how to handle real-world edge ca
 
 ---
 
-## 6. Walmart Sales Performance Analysis
+## 8. Walmart Sales Performance Analysis
 
 **One-liner:** Data analysis project uncovering revenue trends and holiday uplift patterns across 45 Walmart stores.
 
@@ -113,7 +153,7 @@ Production app serving real students. Taught me how to handle real-world edge ca
 **What I did:**
 - Analyzed **6,400+ weekly sales records** across 45 stores
 - Identified revenue trends by store, category, and season
-- Quantified holiday uplift patterns for business planning
+- Quantified holiday uplift patterns worth **$54M annually**; top store earns **8.1x** the bottom one
 
 **Why it's cool:**
 Shows I can work with real datasets and derive actionable business insights, not just build apps.

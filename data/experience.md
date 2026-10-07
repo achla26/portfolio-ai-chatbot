@@ -17,12 +17,15 @@
 
 - **Ship end-to-end AI tools** — Built and deployed an **AI Resume Matcher** using Python, Streamlit, and Groq API. Users paste a JD and resume to get a match score and improvement suggestions.
 
+- **Build data pipelines** — **Shaky Isles** hourly quake pipeline (GeoNet API → bronze JSON → idempotent DuckDB → dbt marts, 5/5 tests, green CI on GitHub Actions + Airflow); SQL warehouse (Bronze→Silver→Gold, star schema, ETL procedures).
+
 - **Build personal AI-native products** — Currently developing **Pulse**, an AI-native mobile command center that unifies capture (note/task/link/list/idea) with auto-classification, URL summarization, and semantic resurfacing.
 
 ### Key achievements:
 
 - Delivered production RAG system with **1.01s average query latency**
 - Shipped **live, publicly usable AI tools** (not just demos)
+- Shipped **tested data pipelines** with idempotent loads and green CI
 - Managed full product lifecycle solo — from design to deployment
 
 ---
@@ -78,6 +81,6 @@ This was my foundation. I learned how to write maintainable PHP/Laravel code, wo
 
 **2022 → 2023:** Leveled up to full-stack, architected systems, mentored on best practices, delivered EdTech and e-commerce apps.
 
-**2024 → Present:** Went freelance, moved to New Zealand as a PR, expanded into AI engineering with LangChain and RAG systems. Building production AI tools.
+**2024 → Present:** Went freelance, moved to New Zealand as a PR, expanded into data engineering (pipelines, dbt, Airflow) and AI engineering (LangChain, RAG). Building production data + AI tools.
 
-**Next:** Looking for a full-time role in New Zealand where I can combine my full-stack experience with AI integration on a real product team.
+**Next:** Looking for a full-time data, AI or full-stack role in New Zealand combining backend, data and AI experience on a real product team.

@@ -2,7 +2,7 @@
 
 ## Who I Am
 
-My name is **Achla Rani** — you can call me Achla. I'm a **Full Stack Developer** with a growing focus on AI Integration, based in **Christchurch, New Zealand**. I bring **5+ years of hands-on experience** designing, building, and deploying production web and mobile applications — and recently, I've expanded into building production-grade AI systems using LangChain, RAG architectures, and LLM-powered tools.
+My name is **Achla Rani** — you can call me Achla. I'm a **Software & Data Engineer** — 5+ years of backend/full-stack plus data pipelines and production AI — based in **Christchurch, New Zealand**. I bring **5+ years of hands-on experience** designing, building, and deploying production web and mobile applications — and recently, I've expanded into **data engineering** (hourly pipelines, dbt, Airflow) and production-grade AI systems using LangChain, RAG architectures, and LLM-powered tools.
 
 ## Full Name & Contact
 
@@ -25,6 +25,7 @@ I build **end-to-end products** — from database schemas and REST APIs on the b
 - **Full-stack web apps** using Laravel, React, Next.js, and Node.js
 - **Cross-platform mobile apps** using React Native
 - **AI-powered systems** using LangChain, RAG, and LLM APIs like Groq
+- **Data pipelines** using Python, DuckDB, dbt and Airflow (hourly quake pipeline with tested, green CI runs)
 
 ## My Personality
 
@@ -34,13 +35,13 @@ I'm also a fast learner — I picked up LangChain and RAG systems in a matter of
 
 ## My Goals
 
-Right now, I'm looking for a **Full Stack Developer** or **AI Engineer** role in New Zealand where I can:
+Right now, I'm looking for a **Data Engineer**, **Analytics Engineer**, **AI Engineer** or **Full Stack Developer** role in New Zealand where I can:
 
-- Work on real production systems with real users
-- Combine my full-stack experience with AI/LLM integration
+- Work on real production data/AI systems with real users
+- Combine my backend, data and AI experience
 - Learn from strong engineers and contribute meaningfully to the team
 
-Long-term, I want to specialize in **AI Engineering** — building intelligent products that solve real problems.
+Long-term, I want to specialize at the **data + AI intersection** — reliable pipelines feeding trustworthy AI products.
 
 ## Quick Facts
 

@@ -21,6 +21,15 @@
 - **MongoDB** — Document modeling
 - **SQLite** — Lightweight local storage
 
+## 📊 Data Engineering (Production pipelines)
+
+- **SQL** — Window functions, CTEs, GROUPING SETS, EXPLAIN tuning (20s → 100ms win)
+- **Python for data** — Pandas, API ingestion, watermarks, idempotent upserts
+- **dbt** — Models, tests, snapshots (SCD2), Jinja vars
+- **Airflow** — TaskFlow DAGs, retries, scheduling
+- **ETL/ELT design** — Medallion architecture, partitioning, data-quality checks
+- **DuckDB & Parquet** — Fast local analytics, columnar storage
+
 ## 🤖 AI & Machine Learning (Recently mastered)
 
 - **LangChain** — Chains, retrievers, custom prompts
@@ -52,6 +61,8 @@
 - **Advanced RAG patterns** — Hybrid search, re-ranking
 - **Agentic AI** — LangGraph, multi-agent systems
 - **System Design** — Scalable architectures for AI systems
+- **Azure + Fabric (DP-700 track)** — ADLS, ADF, lakehouse
+- **Power BI** — DAX, dashboards
 
 ## 🎓 Certifications
 
